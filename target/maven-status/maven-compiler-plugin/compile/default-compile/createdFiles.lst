@@ -1,0 +1,11 @@
+org/java/web/todo/rest/ViewsController.class
+org/java/web/todo/service/ActivityService.class
+org/java/web/todo/config/SecurityConfig.class
+org/java/web/todo/service/impl/ActivityServiceImpl.class
+org/java/web/todo/model/Status.class
+org/java/web/todo/TodoServiceApplication.class
+org/java/web/todo/model/ActivityDto.class
+org/java/web/todo/rest/ToDoController.class
+org/java/web/todo/entity/User.class
+org/java/web/todo/entity/Activity.class
+org/java/web/todo/data/ActivityRepository.class
