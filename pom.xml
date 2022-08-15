@@ -66,8 +66,8 @@
         <configuration>
           <schemaVersion>v2</schemaVersion>
           <subscriptionId>b56439ca-b5c3-4545-a9e7-831159810589</subscriptionId>
-          <resourceGroup>todo-service-1660583705683-rg</resourceGroup>
-          <appName>todo-service-1660583705683</appName>
+          <resourceGroup>a00241065rg</resourceGroup>
+          <appName>mytodo-app</appName>
           <pricingTier>F1</pricingTier>
           <region>centralus</region>
           <runtime>
