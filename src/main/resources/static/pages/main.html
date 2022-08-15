@@ -1,0 +1,27 @@
+<hr>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form name=newform class="form-inline" novalidate ng-submit=validateadd()>
+            <div class="form-group mx-sm-2 mb-2">
+                <input type="text" name=actname  placeholder="Add new" class="form-control"
+                       ng-model="newactivity" required>
+            </div>
+            <button class="btn btn-sm btn-primary mb-2" type=submit ng-disabled=!newform.$valid>Add</button>
+        </form>
+
+    </div>
+    <div class="col-md-6 offset-md-3 table-responsive-md">
+        <hr>
+        Show: <a href="#/pending" ng-class="{'active':filt==='pending'}"> Pending</a> | <a href="#/completed" ng-class="{'active':filt==='completed'}">Completed</a> | <a href="#/all" ng-class="{'active':filt==='all'}">All</a>
+        <hr>
+        <table class="table table-striped">
+            <tbody>
+            <tr ng-repeat="ac in activities">
+                <td><button class="btn btn-sm" ng-class="{'btn-secondary': ac.status == 'PENDING' , 'btn-success': ac.status == 'COMPLETED'}" ng-click='changeStatus(ac.id,ac.name,ac.status)'>{{ac.status}}</button></td>
+                <td>{{ac.name}}</td>
+                <td><button class="btn btn-danger btn-small" ng-click='deleteactivity(ac.id)'><i class="far fa-trash-alt"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

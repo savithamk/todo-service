@@ -18,11 +18,12 @@ public class ActivityDto {
         return dto;
     }
 
-    public Activity toEntity(){
+    public Activity toEntity(String userId){
         Activity activity = new Activity();
         activity.setId(id != null ? id : UUID.randomUUID().toString());
         activity.setName(name);
         activity.setStatus(status !=null ? status : Status.PENDING.name());
+        activity.setUserId(userId);
         return activity;
     }
 

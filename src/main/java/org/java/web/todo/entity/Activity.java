@@ -2,12 +2,14 @@ package org.java.web.todo.entity;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
+import org.springframework.data.annotation.Id;
 
 import java.util.Objects;
 
 @Container(containerName="ToDoList")
 public class Activity {
 
+    @Id
     @PartitionKey
     private String id;
 

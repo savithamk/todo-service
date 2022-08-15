@@ -1,5 +1,6 @@
 package org.java.web.todo.service.impl;
 
+import com.azure.cosmos.models.PartitionKey;
 import org.java.web.todo.data.ActivityRepository;
 import org.java.web.todo.model.ActivityDto;
 import org.java.web.todo.model.Status;
@@ -17,13 +18,13 @@ public class ActivityServiceImpl implements ActivityService {
     private ActivityRepository repository;
 
     @Override
-    public void save(ActivityDto activity) {
-        repository.save(activity.toEntity()).block();
+    public void save(ActivityDto activity,String userId) {
+        repository.save(activity.toEntity(userId)).block();
     }
 
     @Override
-    public Flux<ActivityDto> findAll() {
-        return repository.findAll().map(ActivityDto::fromEntity);
+    public Flux<ActivityDto> findAll(String userId) {
+        return repository.findByUserId(userId).map(ActivityDto::fromEntity);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
-    public void delete(Long id) {
-        repository.deleteById(id).block();
+    public void delete(String id) {
+        repository.deleteById(id,new PartitionKey(id)).block();
     }
 }

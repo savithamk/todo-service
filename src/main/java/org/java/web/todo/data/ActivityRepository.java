@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface ActivityRepository extends ReactiveCosmosRepository<Activity, Long> {
+public interface ActivityRepository extends ReactiveCosmosRepository<Activity, String> {
     Flux<Activity> findByStatus(String status);
+    Flux<Activity> findByUserId(String userId);
 }
